@@ -35,4 +35,4 @@ RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 # 12. Copy Composer files and install dependencies
 COPY src/composer.json src/composer.lock ./
-RUN composer install --no-script
+RUN composer install --no-scripts
