@@ -32,3 +32,7 @@ RUN mkdir -p /var/www/storage /var/www/bootstrap/cache
 
 # 11. Set permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+
+# 12. Copy Composer files and install dependencies
+COPY src/composer.json src/composer.lock ./
+RUN composer install --no-dev --optimize-autoloader
